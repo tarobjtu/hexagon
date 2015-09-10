@@ -1,0 +1,120 @@
+@button-background: #289de9;
+@info-border-color : #54c6f3;
+@info-background : #eef9fe;
+@warning-border-color : #ff8100;
+@destroy-border-color : #b5c0c9;
+
+.hexagon{
+  position: relative;
+  display: inline-block;
+  width: 120px;
+  height: 120px;
+
+  .hexagon-shape {
+    position: absolute;
+    top: -90px;
+    left: -60px;
+    overflow: hidden;
+    display: inline-block;
+    margin: 48px 0;
+    width: 240px; 
+    height: 208px;
+    transform: rotate(-30deg) skewX(30deg) scale(0.5);
+    border-radius: 18px;
+
+    *, *:before{
+      display: block;
+      overflow: hidden;
+      width: inherit; height: inherit;
+      border-radius: inherit;
+    }
+
+    .hexagon-shape-inner {
+      transform: skewX(-30deg) rotate(60deg) skewX(30deg);
+      opacity: 1;
+    }
+
+    &:first-child .hexagon-shape-inner:before, .hexagon-shape-inner-2 {
+      transform: skewX(-30deg) rotate(60deg) skewX(30deg);
+      background: @button-background;
+      content: '';
+    }
+  }
+
+  .hexagon-content{
+    position: absolute;
+    top: 20px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    line-height: 1.5;
+
+    .content-title{
+      font-size: 34px;
+      font-weight: bold;
+      padding-top: 5px;
+      -webkit-font-smoothing: antialiased;
+    }
+    .content-sub{
+      color: #9f9fa0;
+      margin-top: -6px;
+    }
+  }
+
+  /* border style */
+  &.hexagon-with-border{
+
+    .hexagon-shape.content-panel{
+      transform: rotate(-30deg) skewX(30deg) scale(0.46);
+
+      &:first-child .hexagon-shape-inner:before,
+      .hexagon-shape-inner-2 {
+        background: #fff;
+      }
+    }
+  }
+
+
+  /* theme */
+  &.hexagon-button{
+    cursor: pointer;
+    .content-title{
+      font-size: 56px;
+      color : #fff;
+      padding-top: 0;
+    }
+  }
+
+  &.info{
+    .hexagon-shape:first-child .hexagon-shape-inner:before, .hexagon-shape-inner-2 {
+      background: @info-border-color;
+    }
+    .hexagon-shape.content-panel{
+      &:first-child .hexagon-shape-inner:before,
+      .hexagon-shape-inner-2 {
+        background: @info-background;
+      }
+    }
+    .content-title{
+      color: @info-border-color;
+    }
+  }
+
+  &.warning{
+    .hexagon-shape:first-child .hexagon-shape-inner:before, .hexagon-shape-inner-2 {
+      background: @warning-border-color;
+    }
+    .content-title{
+      color: @warning-border-color;
+    }
+  }
+
+  &.destroy{
+    .hexagon-shape:first-child .hexagon-shape-inner:before, .hexagon-shape-inner-2 {
+      background: @destroy-border-color;
+    }
+    .content-title{
+      color: @destroy-border-color;
+    }
+  }
+}
