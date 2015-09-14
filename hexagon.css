@@ -3,6 +3,8 @@
   display: inline-block;
   width: 120px;
   height: 120px;
+  /* border style */
+  /* theme */
 }
 .hexagon .hexagon-shape {
   position: absolute;
@@ -13,6 +15,10 @@
   margin: 48px 0;
   width: 240px;
   height: 208px;
+  -webkit-transform: rotate(-30deg) skewX(30deg) scale(0.5);
+  -moz-transform: rotate(-30deg) skewX(30deg) scale(0.5);
+  -ms-transform: rotate(-30deg) skewX(30deg) scale(0.5);
+  -o-transform: rotate(-30deg) skewX(30deg) scale(0.5);
   transform: rotate(-30deg) skewX(30deg) scale(0.5);
   border-radius: 18px;
 }
@@ -25,11 +31,19 @@
   border-radius: inherit;
 }
 .hexagon .hexagon-shape .hexagon-shape-inner {
+  -webkit-transform: skewX(-30deg) rotate(60deg) skewX(30deg);
+  -moz-transform: skewX(-30deg) rotate(60deg) skewX(30deg);
+  -ms-transform: skewX(-30deg) rotate(60deg) skewX(30deg);
+  -o-transform: skewX(-30deg) rotate(60deg) skewX(30deg);
   transform: skewX(-30deg) rotate(60deg) skewX(30deg);
   opacity: 1;
 }
 .hexagon .hexagon-shape:first-child .hexagon-shape-inner:before,
 .hexagon .hexagon-shape .hexagon-shape-inner-2 {
+  -webkit-transform: skewX(-30deg) rotate(60deg) skewX(30deg);
+  -moz-transform: skewX(-30deg) rotate(60deg) skewX(30deg);
+  -ms-transform: skewX(-30deg) rotate(60deg) skewX(30deg);
+  -o-transform: skewX(-30deg) rotate(60deg) skewX(30deg);
   transform: skewX(-30deg) rotate(60deg) skewX(30deg);
   background: #289de9;
   content: '';
@@ -50,9 +64,12 @@
 }
 .hexagon .hexagon-content .content-sub {
   color: #9f9fa0;
-  margin-top: -6px;
 }
 .hexagon.hexagon-with-border .hexagon-shape.content-panel {
+  -webkit-transform: rotate(-30deg) skewX(30deg) scale(0.46);
+  -moz-transform: rotate(-30deg) skewX(30deg) scale(0.46);
+  -ms-transform: rotate(-30deg) skewX(30deg) scale(0.46);
+  -o-transform: rotate(-30deg) skewX(30deg) scale(0.46);
   transform: rotate(-30deg) skewX(30deg) scale(0.46);
 }
 .hexagon.hexagon-with-border .hexagon-shape.content-panel:first-child .hexagon-shape-inner:before,
